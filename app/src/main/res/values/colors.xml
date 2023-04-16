@@ -11,4 +11,5 @@
     <color name="imagesBackgroundColor">#FF000000</color>
     <color name="textViewColor">#7353ba</color>
     <color name="coffeeBackgroundColor">#bb9457</color>
+    <color name="textFieldColor">#fff3b0</color>
 </resources>
