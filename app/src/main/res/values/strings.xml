@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Monkey Donuts</string>
+    <string name="donuts_name">Donuts</string>
+    <string name="coffee_name">Coffees</string>
+    <string name="user_order_name">Your Order</string>
+    <string name="store_order_name">Store Orders</string>
+</resources>
