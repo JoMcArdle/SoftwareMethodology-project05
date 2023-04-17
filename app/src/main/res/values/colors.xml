@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="backgroundColor">#ffd6ff</color>
     <color name="imagesBackgroundColor">#FF000000</color>
-    <color name="textViewColor">#7353ba</color>
-    <color name="coffeeBackgroundColor">#bb9457</color>
-    <color name="textFieldColor">#fff3b0</color>
+    <color name="textViewColor">#FF3700B3</color>
+    <color name="coffeeBackgroundColor">#c3a995</color>
+    <color name="textFieldColor">#ab947e</color>
+    <color name="buttonBackground">#593d3b</color>
 </resources>

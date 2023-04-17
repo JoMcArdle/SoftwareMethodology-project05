@@ -14,7 +14,7 @@
         android:layout_width="230dp"
         android:layout_height="66dp"
         android:layout_marginTop="20sp"
-        android:text="Order Cofee"
+        android:text="Order Coffee"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/coffeeImageView"
         android:layout_width="180dp"
         android:layout_height="150dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         android:scaleType="fitCenter"
         android:src="@drawable/coffee1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30sp"
         android:text="sweat cream"
+        android:onClick="checkBoxesSelections"
         app:layout_constraintEnd_toStartOf="@+id/cbFrenchVanilla"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coffeeImageView" />
@@ -48,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30sp"
         android:text="irish cream"
+        android:onClick="checkBoxesSelections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cbFrenchVanilla"
         app:layout_constraintTop_toBottomOf="@+id/coffeeImageView" />
@@ -56,19 +58,21 @@
         android:id="@+id/cbFrenchVanilla"
         android:layout_width="111dp"
         android:layout_height="48dp"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="25sp"
         android:text="french vanilla"
+        android:onClick="checkBoxesSelections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coffeeImageView" />
 
     <CheckBox
-        android:id="@+id/csCaramel"
+        android:id="@+id/cbCaramel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="30sp"
         android:text="caramel"
+        android:onClick="checkBoxesSelections"
         app:layout_constraintStart_toStartOf="@+id/cbSweatCream"
         app:layout_constraintTop_toBottomOf="@+id/cbSweatCream" />
 
@@ -76,15 +80,16 @@
         android:id="@+id/cbMocha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="19sp"
         android:text="mocha"
+        android:onClick="checkBoxesSelections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cbFrenchVanilla"
         app:layout_constraintTop_toBottomOf="@+id/cbFrenchVanilla" />
 
     <TextView
-        android:id="@+id/subtotal"
+        android:id="@+id/coffeeSubtotal"
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:layout_marginTop="10sp"
@@ -93,32 +98,36 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:hint="subtotal"
+
         android:background="@color/textFieldColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/coffeeSizeSpinner" />
 
     <Button
         android:id="@+id/coffeeAddToOrderButton"
         android:layout_width="357dp"
         android:layout_height="55dp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="10sp"
         android:text="ADD TO ORDER"
-        app:layout_constraintEnd_toEndOf="@+id/subtotal"
+        android:background="@color/buttonBackground"
+        android:onClick="coffeeAddToOrder"
+        app:layout_constraintEnd_toEndOf="@+id/coffeeSubtotal"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/subtotal"
-        app:layout_constraintTop_toBottomOf="@+id/subtotal" />
+        app:layout_constraintStart_toStartOf="@+id/coffeeSubtotal"
+        app:layout_constraintTop_toBottomOf="@+id/coffeeSubtotal" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="314dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="30sp"
+        android:id="@+id/coffeeSizeSpinner"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="26dp"
+        android:background="@color/textFieldColor"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="@+id/cbIrishCream"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/csCaramel"
-        app:layout_constraintTop_toBottomOf="@+id/cbMocha" />
+        app:layout_constraintStart_toStartOf="@+id/cbCaramel"
+        app:layout_constraintTop_toBottomOf="@+id/cbCaramel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
