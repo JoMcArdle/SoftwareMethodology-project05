@@ -2,13 +2,14 @@ package com.example.softwaremethodology_project05;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 
-    public class Coffee extends MenuItem{
+public class Coffee extends MenuItem{
 
         private String cupSize;
         private int numAddIns = 0;
         private int quantity;
-        private ArrayList<String> addIns = new ArrayList<>();
+        private HashSet<String> addIns = new HashSet<>();
 
         private static final double SHORT_SIZE_PRICE = 1.89;
         private static final double TALL_SIZE_PRICE = 2.29;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
         private static final double VENTI_SIZE_PRICE = 3.09;
         private static final double ADD_IN_PRICE = .30;
 
-        private static final DecimalFormat df = new DecimalFormat("0.00");
 
 
         /**
@@ -60,12 +60,16 @@ import java.util.ArrayList;
 
             this.numAddIns = numAddIns;
         }
+        public void setAddIns(HashSet<String> h){
+            this.addIns = h;
+
+        }
 
         /**
          * Getter method, returns the list of AddIns.
          * @return addIns, the list of add ins for a cup of coffee.
          */
-        public ArrayList<String> getAddIns() {
+        public HashSet<String> getAddIns() {
             return this.addIns;
         }
 
@@ -85,14 +89,6 @@ import java.util.ArrayList;
         public void setQuantity(int quantity) {
 
             this.quantity = quantity;
-        }
-
-        /**
-         * Adds in a new addIn into the list of AddIns.
-         * @param addIn, the choice of an addIn for a cup of coffee.
-         */
-        public void addToList(String addIn) {
-            addIns.add(addIn);
         }
 
 
@@ -118,7 +114,7 @@ import java.util.ArrayList;
                 price = VENTI_SIZE_PRICE;
             }
 
-            double addInCost = (ADD_IN_PRICE * numAddIns);
+            double addInCost = (ADD_IN_PRICE * addIns.size());
             price = price + addInCost;
             return price;
         }
