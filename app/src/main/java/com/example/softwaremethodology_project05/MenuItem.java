@@ -33,7 +33,6 @@ public abstract class MenuItem {
      * @return price of the menu item.
      */
     public double getPrice() {
-
         return this.price;
     }
 

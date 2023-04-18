@@ -17,7 +17,6 @@ public class Coffee extends MenuItem{
         private static final double VENTI_SIZE_PRICE = 3.09;
         private static final double ADD_IN_PRICE = .30;
 
-        private static final DecimalFormat df = new DecimalFormat("0.00");
 
 
         /**
@@ -92,14 +91,6 @@ public class Coffee extends MenuItem{
             this.quantity = quantity;
         }
 
-        /**
-         * Adds in a new addIn into the list of AddIns.
-         * @param addIn, the choice of an addIn for a cup of coffee.
-         */
-        public void addToList(String addIn) {
-            addIns.add(addIn);
-        }
-
 
         /**
          * Calculates the price for a cup of coffee, including any add-ins.
@@ -123,7 +114,7 @@ public class Coffee extends MenuItem{
                 price = VENTI_SIZE_PRICE;
             }
 
-            double addInCost = (ADD_IN_PRICE * numAddIns);
+            double addInCost = (ADD_IN_PRICE * addIns.size());
             price = price + addInCost;
             return price;
         }
