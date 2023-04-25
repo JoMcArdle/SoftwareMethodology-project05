@@ -186,6 +186,8 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             text.setText("$" + df.format(price));
             displayAlert(coffee);
             MainActivity.order.add(coffee);
+            MainActivity.order.setSubTotal(coffee.itemPrice() + MainActivity.order.getSubTotal());
+            MainActivity.order.setSubTotal(roundToTwoDecimal(MainActivity.order.getSubTotal()));
             System.out.println(MainActivity.order);
 
 
@@ -193,6 +195,11 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
             Toast.makeText(this, "You must select a size", Toast.LENGTH_SHORT).show();
             System.out.println("else");
         }
+    }
+
+    private double roundToTwoDecimal(double num) {
+
+        return Math.round(num * 100.0) / 100.0;
     }
     public void checkBoxesSelections(View view){
         if(cbSweatCream.isChecked()){
