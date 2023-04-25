@@ -91,6 +91,16 @@ public class Coffee extends MenuItem{
             this.quantity = quantity;
         }
 
+    /**
+     * Rounds the price of an item to two decimal places.
+     * @param num, amount to be rounded
+     * @return the rounded amount
+     */
+    public double roundToTwoDecimal(double num) {
+
+            return Math.round(num * 100.0) / 100.0;
+        }
+
 
         /**
          * Calculates the price for a cup of coffee, including any add-ins.
@@ -115,8 +125,8 @@ public class Coffee extends MenuItem{
             }
 
             double addInCost = (ADD_IN_PRICE * addIns.size());
-            price = price + addInCost;
-            return price;
+            super.setPrice(roundToTwoDecimal(price + addInCost));
+            return price + addInCost;
         }
 
         /**
@@ -127,9 +137,9 @@ public class Coffee extends MenuItem{
         public String toString() {
             String s = "";
             if(addIns == null || addIns.size() == 0){
-                s = "Coffee " + + this.getQuantity() + " " + this.getCupSize();
+                s = "Coffee " + + this.getQuantity() + " " + this.getCupSize() + " " + roundToTwoDecimal(itemPrice());
             }else{
-                s = "Coffee " + this.getQuantity() + " " + this.getCupSize() + " " + this.addIns;
+                s = "Coffee " + this.getQuantity() + " " + this.getCupSize() + " " + this.addIns + " " + roundToTwoDecimal(itemPrice());
             }
             return s;
         }

@@ -4,4 +4,10 @@
     <string name="coffee_name">Coffees</string>
     <string name="user_order_name">Your Order</string>
     <string name="store_order_name">Store Orders</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="order_total">ORDER TOTAL:</string>
+    <string name="sub_total">Sub-Total:</string>
+    <string name="sales_tax">Sales Tax:</string>
+    <string name="total">Total:</string>
+    <string name="place_order_button">PLACE ORDER</string>
 </resources>

@@ -75,25 +75,36 @@ public class Order implements Serializable {
     }
 
     /**
+     * Getter method, sets the total for the order to the specified amount.
+     * @param total, the amount of the order to be set
+     */
+    public void setTotal(double total) {
+
+        this.total = total;
+    }
+
+    /**
      * Adds a menu item to the list.
      * @param item, the item to be added to the list.
      */
     public void add(MenuItem item) {
+
+        orderNumber++;
         itemsList.add(item);
     }
 
     /**
      * Removes a menu item from the list.
-     * @param item, the item to be removed from the list.
+     * @param obj, the item to be removed from the list.
      * @return false if the orderNumber is less than 0 and true otherwise.
      */
-    public boolean remove(MenuItem item) {
+    public boolean remove(Object obj) {
 
         if(orderNumber < 0) {
             return false;
         }
-        itemsList.remove(item);
         orderNumber--;
+        itemsList.remove(Integer.parseInt(obj.toString()));;
         return true;
     }
 
@@ -105,9 +116,20 @@ public class Order implements Serializable {
         ArrayList<String> orders = new ArrayList<>();
         for(int i = 0; i < itemsList.size(); i++) {
             orders.add(displayInfo(itemsList.get(i)));
+            //orders.add(itemsList.get(i).toString());
         }
         return orders;
     }
+
+    /**
+     * Removes all menu items from the basket.
+     */
+    public void clearList() {
+
+        itemsList.clear();
+        this.subtotal = 0.0;
+    }
+
 
 
 }
